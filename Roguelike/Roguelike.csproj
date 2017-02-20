@@ -76,6 +76,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\InputHandler.cs" />
+    <Compile Include="Assets\PlayerMouseLook.cs" />
     <Compile Include="Assets\PlayerMovement.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
