@@ -25,17 +25,17 @@ public class PlayerMovement : MonoBehaviour {
   }
 
   private void Update() {
-    velocity = AddPlayerInputToVelocity(velocity, goController, goTransform, impulseJump);
-    velocity = ClampHorizontalVelocity (velocity, velocityMax                           );
-    velocity = AddGravityToVelocity    (velocity, goController                          );
-               MovePlayer              (                                                );
-    velocity = ApplyDragToVelocity     (velocity, goController, dragAir, dragGround     );
+    velocity = AddPlayerInputToVelocity(velocity, goController, goTransform, impulseJump, acceleration);
+    velocity = ClampHorizontalVelocity (velocity, velocityMax                                         );
+    velocity = AddGravityToVelocity    (velocity, goController                                        );
+               MovePlayer              (                                                              );
+    velocity = ApplyDragToVelocity     (velocity, goController, dragAir, dragGround                   );
   }
 
-  private static Vector3 AddPlayerInputToVelocity(Vector3 v, CharacterController cc, Transform t, float ij) {
+  private static Vector3 AddPlayerInputToVelocity(Vector3 v, CharacterController cc, Transform t, float ij, float a) {
     if(cc.isGrounded) {
-      v.x += t.forward.z * InputHandler.StrafeAxis();
-      v.z += t.forward.z * InputHandler.WalkAxis  ();
+      v.x += t.forward.z * (InputHandler.StrafeAxis() * a);
+      v.z += t.forward.z * (InputHandler.WalkAxis  () * a);
       v.y  = InputHandler.Jump() ? ij : 0f          ;
     }
     return v;
@@ -47,7 +47,6 @@ public class PlayerMovement : MonoBehaviour {
   }
 
   private static Vector3 AddGravityToVelocity(Vector3 v, CharacterController cc) {
-    if(!cc.isGrounded)
       v.y += Physics.gravity.y * Time.deltaTime;
     return v;
   }
