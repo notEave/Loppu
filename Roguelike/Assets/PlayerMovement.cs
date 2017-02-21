@@ -34,8 +34,11 @@ public class PlayerMovement : MonoBehaviour {
 
   private static Vector3 AddPlayerInputToVelocity(Vector3 v, CharacterController cc, Transform t, float ij, float a) {
     if(cc.isGrounded) {
-      v.x += t.forward.z * (InputHandler.StrafeAxis() * a);
-      v.z += t.forward.z * (InputHandler.WalkAxis  () * a);
+      v.x += t.forward.x * (InputHandler.WalkAxis() * a);
+      v.z += t.forward.z * (InputHandler.WalkAxis() * a);
+
+      v.x += t.right.x * (InputHandler.StrafeAxis() * a);
+      v.z += t.right.z * (InputHandler.StrafeAxis() * a);
       v.y  = InputHandler.Jump() ? ij : 0f          ;
     }
     return v;
