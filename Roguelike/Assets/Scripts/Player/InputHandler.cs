@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class InputHandler {
   public static float StrafeAxis() { return Input.GetAxis("Horizontal"); }

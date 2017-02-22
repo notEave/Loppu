@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class RoomBuilder : MonoBehaviour {
+public class depRoomBuilder : MonoBehaviour {
 
   public int widthMin  =   5,
              widthMax  =  10,
