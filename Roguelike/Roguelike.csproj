@@ -79,10 +79,11 @@
     <Compile Include="Assets\Scripts\Player\PlayerMouseLook.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\RoomGeneration\Floor.cs" />
+    <Compile Include="Assets\Scripts\RoomGeneration\FloorTile.cs" />
+    <Compile Include="Assets\Scripts\RoomGeneration\MazeGeneration\DepthFirst.cs" />
     <Compile Include="Assets\Scripts\RoomGeneration\Roof.cs" />
     <Compile Include="Assets\Scripts\RoomGeneration\RoomGenerator.cs" />
     <Compile Include="Assets\Scripts\RoomGeneration\Wall.cs" />
-    <Compile Include="Assets\Scripts\RoomGeneration\depRoomBuilder.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
