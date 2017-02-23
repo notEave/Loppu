@@ -1,7 +1,4 @@
-﻿namespace RoomBuilder {
-  class Roof {
-    public Roof(Wall w) {
+﻿using UnityEngine;
 
-    }
-  }
+class Roof : MonoBehaviour {
 }

@@ -1,28 +1,17 @@
 ﻿using UnityEngine;
-using RoomBuilder;
-
-  // Unity component script,
-  // its a parent containing object instances
-  // of all room specific classes
 
 public class RoomGenerator : MonoBehaviour {
-  public int widthMin  = 10,
-             widthMax  = 10,
-             heightMin = 10,
-             heightMax = 10;
+  private GameObject go;
 
-  private Room room;
+  // prefabs
+  public GameObject floor;
+  public GameObject wall;
+  public GameObject roof;
 
-  private void Start() {
-    room = new Room()
-      .GenerateFloor(widthMin, widthMax, heightMin, heightMax)
-      .GenerateWall()
-      .GenerateRoof();
+  private void Awake() {
+    go = gameObject;
   }
-
-  // use OnEnterDoor to generate a new Random Room
-
-  void OnEnterDoor() {
-    this.Start();
+  private void Start() {
+    Instantiate(floor, go.transform);
   }
 }
