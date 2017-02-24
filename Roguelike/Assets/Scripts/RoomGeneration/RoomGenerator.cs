@@ -4,7 +4,10 @@ public class RoomGenerator : MonoBehaviour {
   private GameObject go;
 
   // prefabs
+  // floors parent prefab
   public GameObject floor;
+  // labyrinth parent prefab
+  public GameObject labyrinth;
   public GameObject wall;
   public GameObject roof;
 
@@ -12,6 +15,7 @@ public class RoomGenerator : MonoBehaviour {
     go = gameObject;
   }
   private void Start() {
-    Instantiate(floor, go.transform);
+    Instantiate(floor, go.transform).name = floor.name;
+    Instantiate(labyrinth, go.transform).name = labyrinth.name;
   }
 }

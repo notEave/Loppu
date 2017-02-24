@@ -30,10 +30,19 @@ class Floor : MonoBehaviour {
 
       go[x, y] = Instantiate(prefab,
         new Vector3(x, 0, y),
-        new Quaternion(0, 0, 0, 0),
+        new Quaternion(),
         parent
       );
+      go[x, y].name = prefab.name;
     }
     return go;
+  }
+
+  public int Width() {
+    return floor.GetLength(0);
+  }
+
+  public int Height() {
+    return floor.GetLength(1);
   }
 }
