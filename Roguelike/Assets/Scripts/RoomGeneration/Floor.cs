@@ -1,10 +1,10 @@
 ﻿using UnityEngine;
 
 class Floor : MonoBehaviour {
-  public int widthMin  = 10;
-  public int widthMax  = 20;
-  public int heightMin = 10;
-  public int heightMax = 20;
+  public int widthMin  = 11;
+  public int widthMax  = 11;
+  public int heightMin = 11;
+  public int heightMax = 11;
 
   public GameObject floorPrefab;
   private GameObject go;
