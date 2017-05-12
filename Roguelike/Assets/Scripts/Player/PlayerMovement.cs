@@ -6,14 +6,14 @@
 public class PlayerMovement : MonoBehaviour {
   private Transform           goTransform ;
   private CharacterController goController;
-
   private Vector3             velocity    ;
 
-  public float dragAir      = 99f;
-  public float dragGround   = 95f;
-  public float velocityMax  =  5f;
-  public float acceleration =  2f;
-  public float impulseJump  =  5f;
+
+  public float dragAir       = 99f;
+  public float dragGround    = 95f;
+  public float velocityMax   =  5f;
+  public float acceleration  =  2f;
+  public float impulseJump   =  5f;
 
   private void Awake() {
     goTransform  = transform.GetComponent          <Transform>();

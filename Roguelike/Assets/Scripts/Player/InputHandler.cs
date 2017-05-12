@@ -13,4 +13,6 @@ public class InputHandler {
   public static bool Activate () { return Input.GetButtonDown("Activate" ); }
   public static bool Jump     () { return Input.GetButtonDown("Jump"     ); }
   public static bool Inventory() { return Input.GetButtonDown("Inventory"); }
+
+  public static bool Run      () { return Input.GetButton("Run"      ); }
 }
